@@ -11,6 +11,7 @@
   --color-coral-dark: #ef8354;
   --color-coral-light: #f3a07c;
   --color-blue: #4f5d75;
+  --color-blue-light: #6d7e9c;
 }
 
 body {
@@ -19,26 +20,44 @@ body {
   min-height: 100vh;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+input[type="text"] {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--color-silver);
+  font-size: 1rem;
+}
+input[type="text"]:focus {
+  outline: none;
+  border-color: var(--color-dark);
+}
+input[type="text"]::placeholder {
+  color: var(--color-silver);
+}
+input[type="text"]:focus::placeholder {
+  color: var(--color-blue);
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: var(--color-blue);
+  color: var(--color-light);
+  border: none;
   cursor: pointer;
   transition: border-color 0.25s;
+  padding: 0.6em 1.2em;
+  border-radius: 8px;
+  border: 3px solid transparent;
 }
 button:hover {
-  border-color: #646cff;
+  background-color: var(--color-blue-light);
+  border-color: var(--color-blue);
 }
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+
+button.coral {
+  background-color: var(--color-coral-dark);
+  color: var(--color-dark);
+}
+button.coral:hover {
+  background-color: var(--color-coral-light);
+  border-color: var(--color-coral-dark);
 }

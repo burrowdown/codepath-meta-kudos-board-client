@@ -16,9 +16,9 @@ Deployed Application (**required**): [Kudos Board Deployed Site](ADD_LINK_HERE)
   - [x] Home page includes the following features:
     - [x] Header
     - [x] Banner
-    - [ ] Search bar
+    - [x] Search bar
     - [ ] List of boards
-    - [ ] Footer
+    - [x] Footer
 - [ ] **Display Boards**
   - [ ] Users can view a list of all boards in a grid view on the home page.
   - [ ] For each board displayed, users can see:

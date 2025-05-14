@@ -8,7 +8,7 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2rem 0;
+  padding: 1rem 0;
 }
 
 main {
@@ -17,7 +17,6 @@ main {
 
 #logo-img {
   height: 7rem;
-  margin-bottom: 1rem;
 }
 
 footer {
@@ -26,4 +25,48 @@ footer {
   align-items: center;
   background-color: var(--color-silver);
   padding: 2rem 0;
+}
+
+#search-bar-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#search-bar-wrapper input[type="text"] {
+  max-width: 25rem;
+}
+
+#filter-buttons-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+  gap: 1rem;
+}
+
+#create-board-button-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 500px) {
+  #logo-img {
+    height: 5rem;
+  }
+
+  #search-bar-wrapper input[type="text"] {
+    max-width: 17rem;
+  }
+  #filter-buttons-wrapper {
+    gap: 0.2rem;
+    margin: 0.4rem;
+  }
+  #filter-buttons-wrapper button,
+  #create-board-button-wrapper button {
+    padding: 0.1rem 0.2rem;
+    font-size: 0.8rem;
+    border-radius: 4px;
+  }
 }
