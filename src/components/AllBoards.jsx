@@ -2,8 +2,9 @@ import { useEffect, useState } from "react"
 import Board from "./Board"
 import CreateBoard from "./CreateBoard"
 
-function AllBoards({ createIsOpen, setCreateIsOpen }) {
+function AllBoards({ createIsOpen, setCreateIsOpen, filter }) {
   const [boards, setBoards] = useState([])
+  const [displayBoards, setDisplayBoards] = useState([])
 
   useEffect(() => {
     const fetchBoards = async () => {
@@ -16,6 +17,7 @@ function AllBoards({ createIsOpen, setCreateIsOpen }) {
         }
         const data = await response.json()
         setBoards(data)
+        setDisplayBoards(data)
       } catch (error) {
         console.error("Error fetching boards:", error)
       }
@@ -23,6 +25,20 @@ function AllBoards({ createIsOpen, setCreateIsOpen }) {
 
     fetchBoards()
   }, [])
+
+  useEffect(() => {
+    if (filter === "all") {
+      setDisplayBoards(boards)
+    } else if (filter === "recent") {
+      setDisplayBoards(
+        boards.toSorted((a, b) => {
+          return new Date(b.createdAt) - new Date(a.createdAt)
+        })
+      )
+    } else {
+      setDisplayBoards(boards.filter((board) => board.category === filter))
+    }
+  }, [filter])
 
   const deleteBoard = async (boardId) => {
     try {
@@ -52,7 +68,7 @@ function AllBoards({ createIsOpen, setCreateIsOpen }) {
         />
       )}
       <div id="all-boards">
-        {boards.map((board) => (
+        {displayBoards.map((board) => (
           <Board key={board.id} board={board} onDelete={deleteBoard} />
         ))}
       </div>

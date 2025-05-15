@@ -14,11 +14,11 @@ function HomePage() {
       </div>
 
       <div id="filter-buttons-wrapper">
-        <button>All</button>
-        <button>Recent</button>
-        <button>Celebration</button>
-        <button>Thank You</button>
-        <button>Inspiration</button>
+        <button onClick={() => setFilter("all")}>All</button>
+        <button onClick={() => setFilter("recent")}>Recent</button>
+        <button onClick={() => setFilter("Celebration")}>Celebration</button>
+        <button onClick={() => setFilter("ThankYou")}>Thank You</button>
+        <button onClick={() => setFilter("Inspiration")}>Inspiration</button>
       </div>
 
       <div id="create-board-button-wrapper">
@@ -31,6 +31,7 @@ function HomePage() {
         <AllBoards
           createIsOpen={createIsOpen}
           setCreateIsOpen={setCreateIsOpen}
+          filter={filter}
         />
       </div>
     </section>
