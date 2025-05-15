@@ -1,6 +1,6 @@
-import React from "react"
+import AllBoards from "../components/AllBoards"
 
-function BoardPage() {
+function HomePage() {
   return (
     <section>
       <div id="search-bar-wrapper">
@@ -19,17 +19,11 @@ function BoardPage() {
         <button className="coral">Create a New Board</button>
       </div>
 
-      {/* Boards Component Placeholder */}
       <div>
-        <Boards />
+        <AllBoards />
       </div>
     </section>
   )
 }
 
-// Placeholder Boards component
-function Boards() {
-  return <div>{/* Boards will be rendered here */}</div>
-}
-
-export default BoardPage
+export default HomePage

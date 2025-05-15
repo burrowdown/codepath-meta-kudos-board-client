@@ -51,7 +51,35 @@ footer {
   align-items: center;
 }
 
-@media screen and (max-width: 500px) {
+#all-boards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(auto, 15rem));
+  gap: 1rem;
+  margin: 2rem;
+  /* overflow-y: auto; */
+}
+
+#all-boards a {
+  text-decoration: none;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: var(--color-light);
+  box-shadow: var(--box-shadow);
+}
+.card:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s;
+  box-shadow: 0 2px 4px var(--color-blue-light);
+}
+
+@media screen and (max-width: 600px) {
   #logo-img {
     height: 5rem;
   }
@@ -69,4 +97,10 @@ footer {
     font-size: 0.8rem;
     border-radius: 4px;
   }
-}
+
+  #all-boards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
