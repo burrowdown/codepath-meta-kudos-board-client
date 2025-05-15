@@ -1,6 +1,12 @@
+import { useState } from "react"
+
 import AllBoards from "../components/AllBoards"
 
 function HomePage() {
+  const [searchTerm, setSearchTerm] = useState("")
+  const [filter, setFilter] = useState("all")
+  const [createIsOpen, setCreateIsOpen] = useState(false)
+
   return (
     <section>
       <div id="search-bar-wrapper">
@@ -16,11 +22,16 @@ function HomePage() {
       </div>
 
       <div id="create-board-button-wrapper">
-        <button className="coral">Create a New Board</button>
+        <button className="coral" onClick={() => setCreateIsOpen(true)}>
+          Create a New Board
+        </button>
       </div>
 
       <div>
-        <AllBoards />
+        <AllBoards
+          createIsOpen={createIsOpen}
+          setCreateIsOpen={setCreateIsOpen}
+        />
       </div>
     </section>
   )

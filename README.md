@@ -12,18 +12,18 @@ Deployed Application (**required**): [Kudos Board Deployed Site](ADD_LINK_HERE)
 
 ##### Home Page
 
-- [ ] **Home Page Display**
+- [x] **Home Page Display**
   - [x] Home page includes the following features:
     - [x] Header
     - [x] Banner
     - [x] Search bar
-    - [ ] List of boards
+    - [x] List of boards
     - [x] Footer
 - [ ] **Display Boards**
-  - [ ] Users can view a list of all boards in a grid view on the home page.
-  - [ ] For each board displayed, users can see:
-    - [ ] An image/gif
-    - [ ] A board title
+  - [x] Users can view a list of all boards in a grid view on the home page.
+  - [x] For each board displayed, users can see:
+    - [x] An image/gif
+    - [x] A board title
 - [ ] **Filter Boards**
   - [ ] Home page includes navigation bar, drop down, or some other mechanism which allows users to filter boards by the following categories:
     - [ ] All/Home (displays all boards)
@@ -43,19 +43,19 @@ Deployed Application (**required**): [Kudos Board Deployed Site](ADD_LINK_HERE)
     - [ ] Clicks the Submit/Search button
   - [ ] User can delete all text from the text input field.
   - [ ] When all text is cleared from the text input field, all boards are displayed in a grid view
-- [ ] **View Board**
-  - [ ] Users can click on a board in the grid view to navigate to a new page containing that board's details.
-- [ ] **Add New Board**
-  - [ ] Users can create a new board on the home page.
-  - [ ] When creating a new board, users can specify the:
-    - [ ] Title (required)
-    - [ ] Category (required)
-    - [ ] Author (optional)
-  - [ ] Items listed as required above must have a value to succesffuly create a new board.
-  - [ ] When the board is successfully created, it appears in the grid of boards.
-- [ ] **Delete Board**
-  - [ ] User can delete boards on the home page.
-  - [ ] When the board is deleted, the board disappears from the grid of boards.
+- [x] **View Board**
+  - [x] Users can click on a board in the grid view to navigate to a new page containing that board's details.
+- [x] **Add New Board**
+  - [x] Users can create a new board on the home page.
+  - [x] When creating a new board, users can specify the:
+    - [x] Title (required)
+    - [x] Category (required)
+    - [x] Author (optional)
+  - [x] Items listed as required above must have a value to succesffuly create a new board.
+  - [x] When the board is successfully created, it appears in the grid of boards.
+- [x] **Delete Board**
+  - [x] User can delete boards on the home page.
+  - [x] When the board is deleted, the board disappears from the grid of boards.
 
 ##### Board Page
 

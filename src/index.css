@@ -22,6 +22,11 @@ body {
   min-height: 100vh;
 }
 
+p {
+  margin: 0;
+}
+
+select,
 input[type="text"] {
   width: 100%;
   padding: 0.5rem 1rem;
@@ -53,6 +58,11 @@ button {
 button:hover {
   background-color: var(--color-blue-light);
   border-color: var(--color-blue);
+}
+button:disabled {
+  background-color: var(--color-silver);
+  color: var(--color-light);
+  cursor: not-allowed;
 }
 
 button.coral {
