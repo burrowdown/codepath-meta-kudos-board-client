@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import Card from "./Card"
 
 function AllCards({ cards }) {
@@ -10,9 +10,7 @@ function AllCards({ cards }) {
         `${import.meta.env.VITE_SERVER_BASE_URL}/cards/${id}`,
         { method: "DELETE" }
       )
-      if (!response.ok) {
-        throw new Error("Network response was not ok")
-      }
+      if (!response.ok) throw new Error("Network response was not ok")
       setDisplayCards((prevCards) => prevCards.filter((card) => card.id !== id))
     } catch (error) {
       console.error("Error deleting card:", error)

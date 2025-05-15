@@ -14,9 +14,7 @@ function AllBoards({ createIsOpen, close, filter, searchTerm }) {
         const response = await fetch(
           `${import.meta.env.VITE_SERVER_BASE_URL}/boards`
         )
-        if (!response.ok) {
-          throw new Error("Network response was not ok")
-        }
+        if (!response.ok) throw new Error("Network response was not ok")
         const data = await response.json()
         setBoards(data)
         setDisplayBoards(data)
@@ -66,9 +64,7 @@ function AllBoards({ createIsOpen, close, filter, searchTerm }) {
           method: "DELETE",
         }
       )
-      if (!response.ok) {
-        throw new Error("Network response was not ok")
-      }
+      if (!response.ok) throw new Error("Network response was not ok")
       setBoards((prevBoards) =>
         prevBoards.filter((board) => board.id !== boardId)
       )

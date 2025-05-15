@@ -19,7 +19,7 @@ Deployed Application (**required**): [Kudos Board Deployed Site](ADD_LINK_HERE)
     - [x] Search bar
     - [x] List of boards
     - [x] Footer
-- [ ] **Display Boards**
+- [x] **Display Boards**
   - [x] Users can view a list of all boards in a grid view on the home page.
   - [x] For each board displayed, users can see:
     - [x] An image/gif
@@ -59,12 +59,12 @@ Deployed Application (**required**): [Kudos Board Deployed Site](ADD_LINK_HERE)
 
 ##### Board Page
 
-- [ ] **Display Cards**
+- [x] **Display Cards**
   - [x] For a given board, the board's page displays a list of all cards for that board in a grid view.
   - [x] For each card should displayed, users can see the card's:
     - [x] Message
     - [x] Gif
-    - [ ] Number of upvotes
+    - [x] Number of upvotes
     - [x] Delete button
 - [x] **Add New Card**
   - [x] Users can make a new card associated with the current board.
@@ -73,14 +73,14 @@ Deployed Application (**required**): [Kudos Board Deployed Site](ADD_LINK_HERE)
     - [x] A gif found using the [GIPHY API](https://developers.giphy.com/docs/api/) (required).
   - [ ] Users are given the option to specify the author of the card.
   - [ ] When the new card is successfully created, it appears in the grid of cards.
-- [ ] **Upvote Card**
-  - [ ] Users can upvote a card.
-  - [ ] Update the vote count on the card tile when a user clicks the upvote icon.
-  - [ ] When the upvote icon is clicked the upvote count increases by 1.
-  - [ ] A user can upvote a card multiple times.
+- [x] **Upvote Card**
+  - [x] Users can upvote a card.
+  - [x] Update the vote count on the card tile when a user clicks the upvote icon.
+  - [x] When the upvote icon is clicked the upvote count increases by 1.
+  - [x] A user can upvote a card multiple times.
 - [x] **Delete Card**
   - [x] Users can delete cards.
-  - [ ] When the user clicks the delete button for a card, the card disappears from the grid of cards.
+  - [x] When the user clicks the delete button for a card, the card disappears from the grid of cards.
 - [ ] **Deployment**
   - [ ] Website is deployed via Render.
   - [ ] **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS**: For ease of grading, please use the deployed version of your website when creating your walkthrough.

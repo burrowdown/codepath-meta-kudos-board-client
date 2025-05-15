@@ -97,11 +97,15 @@ footer {
   color: #bb4411;
 }
 
-.delete-board-button {
+.card button {
   padding: 0.1rem 0.2rem;
   font-size: 0.8rem;
   border-radius: 4px;
   margin: 1rem;
+}
+
+.card button.coral {
+  font-weight: 900;
 }
 
 .card {
@@ -117,6 +121,11 @@ footer {
   transform: scale(1.02);
   transition: transform 0.3s;
   box-shadow: 0 2px 4px var(--color-blue-light);
+}
+
+.card img {
+  width: 12rem;
+  border-radius: 4px;
 }
 
 /* Modal */
@@ -190,7 +199,14 @@ footer {
   border: 10px solid var(--color-coral-dark);
 }
 
+.gif-results img:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s;
+  box-shadow: 0 2px 4px var(--color-blue-light);
+}
+
 @media screen and (max-width: 600px) {
+  /* TODO: cards lose margin? */
   #logo-img {
     height: 5rem;
   }

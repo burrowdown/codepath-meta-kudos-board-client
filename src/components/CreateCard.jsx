@@ -16,15 +16,10 @@ function CreateCard({ boardId, close }) {
       const response = await fetch(
         `${GIPHY_BASE_URL}/?api_key=${GIPHY_API_KEY}&limit=6&q=${searchTerm}&rating=pg`
       )
-      if (!response.ok) {
-        throw new Error("Network response was not ok")
-      }
+      if (!response.ok) throw new Error("Network response was not ok")
       const data = await response.json()
-      if (data.data) {
-        setGifs(data.data)
-      } else {
-        console.error("Failed to fetch GIFs:", data)
-      }
+      if (data.data) setGifs(data.data)
+      else console.error("Failed to fetch GIFs:", data)
     } catch (error) {
       console.error("Error fetching GIFs:", error)
     }
@@ -47,15 +42,10 @@ function CreateCard({ boardId, close }) {
           }),
         }
       )
-      if (!response.ok) {
-        throw new Error("Network response was not ok", response)
-      }
+      if (!response.ok) throw new Error("Network response was not ok", response)
       const data = await response.json()
-      if (data.id) {
-        close()
-      } else {
-        console.error("Failed to create card:", data)
-      }
+      if (data.id) close()
+      else console.error("Failed to create card:", data)
     } catch (error) {
       console.error("Error fetching cards:", error)
     }

@@ -25,9 +25,7 @@ function CreateBoard({ close, setBoards }) {
           body: JSON.stringify({ title, author, category }),
         }
       )
-      if (!response.ok) {
-        throw new Error("Network response was not ok")
-      }
+      if (!response.ok) throw new Error("Network response was not ok")
       const data = await response.json()
       if (data.id) {
         handleClose()

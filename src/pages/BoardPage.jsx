@@ -15,9 +15,7 @@ function BoardPage() {
         const response = await fetch(
           `${import.meta.env.VITE_SERVER_BASE_URL}/boards/${boardId}`
         )
-        if (!response.ok) {
-          throw new Error("Network response was not ok")
-        }
+        if (!response.ok) throw new Error("Network response was not ok")
         const data = await response.json()
         setBoardData(data)
       } catch (error) {
@@ -25,7 +23,6 @@ function BoardPage() {
         setErrorMessage("Could not fetch board data. Please try again later.")
       }
     }
-
     fetchBoardData()
   }, [])
 
