@@ -39,6 +39,11 @@ footer {
 
 #search-bar-wrapper input[type="text"] {
   max-width: 25rem;
+  border-radius: 8px 0 0 8px;
+}
+
+#search-bar-wrapper button {
+  border-radius: 0 8px 8px 0;
 }
 
 #filter-buttons-wrapper {
@@ -56,6 +61,14 @@ footer {
 }
 
 /* Boards */
+
+#no-content-warning {
+  display: flex;
+  justify-content: center;
+  margin: 2rem;
+  font-size: 2rem;
+  color: var(--color-dark);
+}
 
 #all-boards {
   display: grid;

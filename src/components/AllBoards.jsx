@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import Board from "./Board"
 import CreateBoard from "./CreateBoard"
 
-function AllBoards({ createIsOpen, setCreateIsOpen, filter }) {
+function AllBoards({ createIsOpen, setCreateIsOpen, filter, searchTerm }) {
   const [boards, setBoards] = useState([])
   const [displayBoards, setDisplayBoards] = useState([])
 
@@ -40,6 +40,18 @@ function AllBoards({ createIsOpen, setCreateIsOpen, filter }) {
     }
   }, [filter])
 
+  useEffect(() => {
+    if (searchTerm) {
+      setDisplayBoards(
+        boards.filter((board) =>
+          board.title.toLowerCase().includes(searchTerm.toLowerCase())
+        )
+      )
+    } else {
+      setDisplayBoards(boards)
+    }
+  }, [searchTerm])
+
   const deleteBoard = async (boardId) => {
     try {
       const response = await fetch(
@@ -67,11 +79,15 @@ function AllBoards({ createIsOpen, setCreateIsOpen, filter }) {
           close={() => setCreateIsOpen(false)}
         />
       )}
-      <div id="all-boards">
-        {displayBoards.map((board) => (
-          <Board key={board.id} board={board} onDelete={deleteBoard} />
-        ))}
-      </div>
+      {displayBoards.length === 0 ? (
+        <div id="no-content-warning">No boards found</div>
+      ) : (
+        <div id="all-boards">
+          {displayBoards.map((board) => (
+            <Board key={board.id} board={board} onDelete={deleteBoard} />
+          ))}
+        </div>
+      )}
     </>
   )
 }
