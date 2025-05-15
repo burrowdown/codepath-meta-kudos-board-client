@@ -153,6 +153,25 @@ footer {
   width: 15rem;
 }
 
+/* Board Page */
+
+#board-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+#board-header h1 {
+  font-size: 3rem;
+  margin: 0.5rem;
+}
+
+#board-header button {
+  margin: 1rem;
+}
+
 @media screen and (max-width: 600px) {
   #logo-img {
     height: 5rem;

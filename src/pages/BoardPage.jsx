@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
+import AllCards from "../components/AllCards"
+import CreateCard from "../components/CreateCard"
 
 function BoardPage() {
   const { boardId } = useParams()
   const [boardData, setBoardData] = useState(null)
   const [errorMessage, setErrorMessage] = useState(null)
+  const [createIsOpen, setCreateIsOpen] = useState(false)
 
   useEffect(() => {
     const fetchBoardData = async () => {
@@ -26,13 +29,33 @@ function BoardPage() {
     fetchBoardData()
   }, [])
 
+  if (!boardData) {
+    return (
+      <div>
+        <h1>Loading...</h1>
+        {errorMessage && <p>{errorMessage}</p>}
+      </div>
+    )
+  }
+
   return (
     <div>
-      {boardData && (
-        <div>
-          <h1>{boardData.title}</h1>
-          {boardData.author && <p>By: {boardData.author}</p>}
-        </div>
+      <div id="board-header">
+        <h1>{boardData.title}</h1>
+        {boardData && (
+          <div>{boardData.author && <p>By: {boardData.author}</p>}</div>
+        )}
+        <button className="coral" onClick={() => setCreateIsOpen(true)}>
+          Add a New Card
+        </button>
+      </div>
+      <AllCards cards={boardData.cards} />
+      {createIsOpen && (
+        <CreateCard
+          boardId={boardId}
+          createIsOpen={createIsOpen}
+          close={() => setCreateIsOpen(false)}
+        />
       )}
     </div>
   )

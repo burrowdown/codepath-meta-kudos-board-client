@@ -12,7 +12,6 @@
   --color-coral-light: #f3a07c;
   --color-blue: #4f5d75;
   --color-blue-light: #6d7e9c;
-
   --box-shadow: 0 2px 4px var(--color-silver);
 }
 
@@ -20,6 +19,7 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  color: var(--color-dark);
 }
 
 p {

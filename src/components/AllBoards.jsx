@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import Board from "./Board"
 import CreateBoard from "./CreateBoard"
 
-function AllBoards({ createIsOpen, setCreateIsOpen, filter, searchTerm }) {
+function AllBoards({ createIsOpen, close, filter, searchTerm }) {
   const [boards, setBoards] = useState([])
   const [displayBoards, setDisplayBoards] = useState([])
 
@@ -79,12 +79,7 @@ function AllBoards({ createIsOpen, setCreateIsOpen, filter, searchTerm }) {
 
   return (
     <>
-      {createIsOpen && (
-        <CreateBoard
-          setBoards={setBoards}
-          close={() => setCreateIsOpen(false)}
-        />
-      )}
+      {createIsOpen && <CreateBoard setBoards={setBoards} close={close} />}
       {displayBoards.length === 0 ? (
         <div id="no-content-warning">No boards found</div>
       ) : (

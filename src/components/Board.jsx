@@ -8,7 +8,7 @@ function Board({ board, onDelete }) {
 
   return (
     <Link to={`/board/${board.id}`}>
-      <div className="board card">
+      <div className="card">
         <h3>{board.title}</h3>
         <p className="board-category">{board.category}</p>
         <img

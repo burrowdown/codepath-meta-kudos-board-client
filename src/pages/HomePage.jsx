@@ -25,7 +25,7 @@ function HomePage() {
       <div>
         <AllBoards
           createIsOpen={createIsOpen}
-          setCreateIsOpen={setCreateIsOpen}
+          close={() => setCreateIsOpen(false)}
           filter={filter}
           searchTerm={searchTerm}
         />
