@@ -1,10 +1,37 @@
 import { useState } from "react"
 
+// TODO: add card to the board
+
+const GIPHY_BASE_URL = "https://api.giphy.com/v1/gifs/search"
+const GIPHY_API_KEY = import.meta.env.VITE_GIPHY_API_KEY
+
 function CreateCard({ boardId, close }) {
   const [text, setText] = useState("")
+  const [searchTerm, setSearchTerm] = useState("")
+  const [gifs, setGifs] = useState([])
+  const [selectedGif, setSelectedGif] = useState(null)
+
+  const fetchGifs = async () => {
+    try {
+      const response = await fetch(
+        `${GIPHY_BASE_URL}/?api_key=${GIPHY_API_KEY}&limit=6&q=${searchTerm}&rating=pg`
+      )
+      if (!response.ok) {
+        throw new Error("Network response was not ok")
+      }
+      const data = await response.json()
+      if (data.data) {
+        setGifs(data.data)
+      } else {
+        console.error("Failed to fetch GIFs:", data)
+      }
+    } catch (error) {
+      console.error("Error fetching GIFs:", error)
+    }
+  }
 
   const handleCreate = async () => {
-    if (!text) {
+    if (!text || !selectedGif) {
       return
     }
     try {
@@ -15,7 +42,7 @@ function CreateCard({ boardId, close }) {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             text,
-            gifUrl: "TODO: do this for real",
+            gifUrl: selectedGif.images.original.url,
             boardId: Number(boardId), // TODO: why is this a string?
           }),
         }
@@ -45,6 +72,26 @@ function CreateCard({ boardId, close }) {
             value={text}
             onChange={(e) => setText(e.target.value)}
           />
+          <input
+            type="text"
+            placeholder="Search GIFs"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+          <button onClick={fetchGifs}>Search</button>
+        </div>
+        <div className="gif-results">
+          {gifs.map((gif) => (
+            <img
+              className={`gif ${
+                selectedGif?.id === gif.id ? "selected-gif" : ""
+              }`}
+              onClick={() => setSelectedGif(gif)}
+              key={gif.id}
+              src={gif.images.fixed_height.url}
+              alt={gif.alt_text}
+            />
+          ))}
         </div>
         <div className="button-wrapper">
           <button disabled={!text} onClick={handleCreate}>

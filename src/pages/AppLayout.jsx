@@ -1,14 +1,16 @@
-import { Outlet } from "react-router-dom"
+import { Link, Outlet } from "react-router-dom"
 
 function AppLayout() {
   return (
     <div className="app-layout">
       <header>
-        <img
-          id="logo-img"
-          src="/src/assets/kudoboard_logo.png"
-          alt="Kudos Board Logo"
-        />
+        <Link to="/">
+          <img
+            id="logo-img"
+            src="/src/assets/kudoboard_logo.png"
+            alt="Kudos Board Logo"
+          />
+        </Link>
       </header>
       <main>
         <Outlet />

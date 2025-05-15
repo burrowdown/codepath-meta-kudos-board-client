@@ -172,6 +172,24 @@ footer {
   margin: 1rem;
 }
 
+/* Cards */
+
+.gif-results {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.gif-results img {
+  /* width: 10rem; */
+  /* height: 10rem; */
+  border-radius: 4px;
+}
+
+.selected-gif {
+  border: 10px solid var(--color-coral-dark);
+}
+
 @media screen and (max-width: 600px) {
   #logo-img {
     height: 5rem;
