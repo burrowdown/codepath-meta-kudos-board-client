@@ -6,6 +6,8 @@ function AllBoards({ createIsOpen, setCreateIsOpen, filter, searchTerm }) {
   const [boards, setBoards] = useState([])
   const [displayBoards, setDisplayBoards] = useState([])
 
+  // TODO: reset filter and search term when adding a new board
+
   useEffect(() => {
     const fetchBoards = async () => {
       try {
@@ -51,6 +53,10 @@ function AllBoards({ createIsOpen, setCreateIsOpen, filter, searchTerm }) {
       setDisplayBoards(boards)
     }
   }, [searchTerm])
+
+  useEffect(() => {
+    setDisplayBoards(boards)
+  }, [boards])
 
   const deleteBoard = async (boardId) => {
     try {
