@@ -7,6 +7,7 @@ const GIPHY_API_KEY = import.meta.env.VITE_GIPHY_API_KEY
 
 function CreateCard({ boardId, close }) {
   const [text, setText] = useState("")
+  const [author, setAuthor] = useState("")
   const [searchTerm, setSearchTerm] = useState("")
   const [gifs, setGifs] = useState([])
   const [selectedGif, setSelectedGif] = useState(null)
@@ -37,6 +38,7 @@ function CreateCard({ boardId, close }) {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             text,
+            author,
             gifUrl: selectedGif.images.original.url,
             boardId: Number(boardId), // TODO: why is this a string?
           }),
@@ -64,10 +66,17 @@ function CreateCard({ boardId, close }) {
           />
           <input
             type="text"
+            placeholder="Author (optional)"
+            value={author}
+            onChange={(e) => setAuthor(e.target.value)}
+          />
+          <input
+            type="text"
             placeholder="Search GIFs"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
+          {/* TODO: style this button */}
           <button onClick={fetchGifs}>Search</button>
         </div>
         <div className="gif-results">
