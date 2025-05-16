@@ -5,7 +5,7 @@ import { useState } from "react"
 const GIPHY_BASE_URL = "https://api.giphy.com/v1/gifs/search"
 const GIPHY_API_KEY = import.meta.env.VITE_GIPHY_API_KEY
 
-function CreateCard({ boardId, close }) {
+function CreateCard({ boardId, close, setCards }) {
   const [text, setText] = useState("")
   const [author, setAuthor] = useState("")
   const [searchTerm, setSearchTerm] = useState("")
@@ -46,8 +46,10 @@ function CreateCard({ boardId, close }) {
       )
       if (!response.ok) throw new Error("Network response was not ok", response)
       const data = await response.json()
-      if (data.id) close()
-      else console.error("Failed to create card:", data)
+      if (data.id) {
+        setCards((prevCards) => [...prevCards, data])
+        close()
+      } else console.error("Failed to create card:", data)
     } catch (error) {
       console.error("Error fetching cards:", error)
     }

@@ -6,6 +6,7 @@ import CreateCard from "../components/CreateCard"
 function BoardPage() {
   const { boardId } = useParams()
   const [boardData, setBoardData] = useState(null)
+  const [cards, setCards] = useState([])
   const [errorMessage, setErrorMessage] = useState(null)
   const [createIsOpen, setCreateIsOpen] = useState(false)
 
@@ -18,6 +19,7 @@ function BoardPage() {
         if (!response.ok) throw new Error("Network response was not ok")
         const data = await response.json()
         setBoardData(data)
+        setCards(data.cards)
       } catch (error) {
         console.error("Error fetching board data:", error)
         setErrorMessage("Could not fetch board data. Please try again later.")
@@ -46,12 +48,13 @@ function BoardPage() {
           Add a New Card
         </button>
       </div>
-      <AllCards cards={boardData.cards} />
+      <AllCards cards={cards.toReversed()} />
       {createIsOpen && (
         <CreateCard
           boardId={boardId}
           createIsOpen={createIsOpen}
           close={() => setCreateIsOpen(false)}
+          setCards={setCards}
         />
       )}
     </div>

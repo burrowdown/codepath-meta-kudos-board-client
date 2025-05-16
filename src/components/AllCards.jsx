@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Card from "./Card"
 
 function AllCards({ cards }) {
@@ -16,6 +16,10 @@ function AllCards({ cards }) {
       console.error("Error deleting card:", error)
     }
   }
+
+  useEffect(() => {
+    setDisplayCards(cards)
+  }, [cards])
 
   return (
     <div className="all-cards">
