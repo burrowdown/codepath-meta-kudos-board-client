@@ -34,9 +34,7 @@ function Card({ card, handleDelete, handlePin }) {
         >
           📌
         </button>
-        <h3>
-          {card.text} + {card.id}
-        </h3>
+        <h3>{card.text}</h3>
         {card.author && <p>From: {card.author}</p>}
       </div>
       <img src={card.gifUrl} alt="" />

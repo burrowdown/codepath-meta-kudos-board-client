@@ -94,7 +94,7 @@ function CreateCard({ boardId, close, setCards }) {
           ))}
         </div>
         <div className="button-wrapper">
-          <button disabled={!text} onClick={handleCreate}>
+          <button disabled={!text || !selectedGif} onClick={handleCreate}>
             Create
           </button>
           <button className="coral" onClick={close}>

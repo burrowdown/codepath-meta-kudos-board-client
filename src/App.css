@@ -21,6 +21,13 @@ main {
   height: 7rem;
 }
 
+.dark-mode-toggle {
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+  padding: 0.2rem 0.5rem;
+}
+
 footer {
   display: flex;
   justify-content: center;
@@ -94,7 +101,7 @@ footer {
 
 .board-category {
   margin: 0.2rem;
-  color: #bb4411;
+  color: var(--color-coral-very-dark);
 }
 
 .card button {
@@ -117,11 +124,11 @@ footer {
   background-color: var(--color-light);
   box-shadow: var(--box-shadow);
   position: relative;
+  height: 100%;
 }
 .card:hover {
   transform: scale(1.02);
   transition: transform 0.3s;
-  box-shadow: 0 2px 4px var(--color-blue-light);
 }
 
 .card img {
@@ -149,6 +156,8 @@ footer {
   height: 100%;
   overflow: auto;
   background-color: #333b;
+  color: var(--color-dark);
+  z-index: 2;
 }
 
 .modal-content {
@@ -251,6 +260,9 @@ footer {
 @media screen and (max-width: 600px) {
   #logo-img {
     height: 5rem;
+  }
+  .dark-mode-toggle {
+    font-size: 0.6rem;
   }
 
   #search-bar-wrapper input[type="text"] {
