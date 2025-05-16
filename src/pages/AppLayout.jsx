@@ -5,11 +5,7 @@ function AppLayout() {
     <div className="app-layout">
       <header>
         <Link to="/">
-          <img
-            id="logo-img"
-            src="/src/assets/kudoboard_logo.png"
-            alt="Kudos Board Logo"
-          />
+          <img id="logo-img" src="/kudoboard_logo.png" alt="Kudos Board Logo" />
         </Link>
       </header>
       <main>
