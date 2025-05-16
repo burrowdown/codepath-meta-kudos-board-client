@@ -1,6 +1,6 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
-function Card({ card, handleDelete }) {
+function Card({ card, handleDelete, handlePin }) {
   const [newCard, setNewCard] = useState(card)
 
   const vote = async () => {
@@ -21,10 +21,22 @@ function Card({ card, handleDelete }) {
     }
   }
 
+  useEffect(() => {
+    setNewCard(card)
+  }, [card])
+
   return (
     <div key={card.id} className="card">
       <div className="card-text">
-        <h3>{card.text}</h3>
+        <button
+          className={`pushpin ${newCard.isPinned ? "pinned" : ""}`}
+          onClick={() => handlePin(card)}
+        >
+          📌
+        </button>
+        <h3>
+          {card.text} + {card.id}
+        </h3>
         {card.author && <p>From: {card.author}</p>}
       </div>
       <img src={card.gifUrl} alt="" />

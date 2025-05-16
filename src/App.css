@@ -116,6 +116,7 @@ footer {
   border-radius: 8px;
   background-color: var(--color-light);
   box-shadow: var(--box-shadow);
+  position: relative;
 }
 .card:hover {
   transform: scale(1.02);
@@ -131,10 +132,11 @@ footer {
 .card .card-text {
   text-align: center;
   margin: 0.3rem;
+  padding-right: 0.5rem;
 }
 
 .card .card-text h3 {
-  margin: 0.5rem 1.5rem;
+  margin: 0 1.5rem 0.5rem;
 }
 
 /* Modal */
@@ -223,6 +225,27 @@ footer {
 .selected-gif {
   transform: scale(1.05);
   transition: transform 0.3s;
+}
+
+.card .pushpin {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background-color: #fff;
+  border-radius: 50%;
+  border: 1px solid var(--color-dark);
+  width: 2rem;
+  height: 2rem;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.4;
+  margin: 0;
+}
+.card .pushpin:hover,
+.card .pushpin.pinned {
+  opacity: 1;
 }
 
 @media screen and (max-width: 600px) {
