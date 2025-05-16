@@ -38,7 +38,7 @@ function CreateCard({ boardId, close, setCards }) {
             text,
             author,
             gifUrl: selectedGif.images.original.url,
-            boardId: Number(boardId), // TODO: why is this a string?
+            boardId: Number(boardId),
           }),
         }
       )

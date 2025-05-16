@@ -3,50 +3,59 @@ import { useState } from "react"
 function SearchAndFilter({ setSearchTerm, filter, setFilter }) {
   const [searchInput, setSearchInput] = useState("")
 
+  const handleFilterChange = (val) => {
+    setFilter(val)
+    setSearchInput("")
+    setSearchTerm("")
+  }
+
+  const handleSearchChange = () => {
+    setSearchTerm(searchInput)
+    setFilter("all")
+  }
+
   return (
     <>
       <div id="search-bar-wrapper">
         <input
           type="text"
           placeholder="Search boards..."
-          defaultValue={searchInput}
+          value={searchInput}
           onChange={(e) => setSearchInput(e.target.value)}
           onKeyDown={(e) => {
-            if (e.key === "Enter") {
-              setSearchTerm(searchInput)
-            }
+            if (e.key === "Enter") handleSearchChange()
           }}
         />
-        <button onClick={() => setSearchTerm(searchInput)}>Search</button>
+        <button onClick={handleSearchChange}>Search</button>
       </div>
 
       <div id="filter-buttons-wrapper">
         <button
-          onClick={() => setFilter("all")}
+          onClick={() => handleFilterChange("all")}
           className={filter === "all" ? "coral" : ""}
         >
           All
         </button>
         <button
-          onClick={() => setFilter("recent")}
+          onClick={() => handleFilterChange("recent")}
           className={filter === "recent" ? "coral" : ""}
         >
           Recent
         </button>
         <button
-          onClick={() => setFilter("Celebration")}
+          onClick={() => handleFilterChange("Celebration")}
           className={filter === "Celebration" ? "coral" : ""}
         >
           Celebration
         </button>
         <button
-          onClick={() => setFilter("ThankYou")}
+          onClick={() => handleFilterChange("ThankYou")}
           className={filter === "ThankYou" ? "coral" : ""}
         >
           Thank You
         </button>
         <button
-          onClick={() => setFilter("Inspiration")}
+          onClick={() => handleFilterChange("Inspiration")}
           className={filter === "Inspiration" ? "coral" : ""}
         >
           Inspiration

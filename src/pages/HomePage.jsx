@@ -8,6 +8,12 @@ function HomePage() {
   const [filter, setFilter] = useState("all")
   const [createIsOpen, setCreateIsOpen] = useState(false)
 
+  const close = () => {
+    setSearchTerm("")
+    setFilter("all")
+    setCreateIsOpen(false)
+  }
+
   return (
     <section>
       <SearchAndFilter
@@ -25,7 +31,7 @@ function HomePage() {
       <div>
         <AllBoards
           createIsOpen={createIsOpen}
-          close={() => setCreateIsOpen(false)}
+          close={close}
           filter={filter}
           searchTerm={searchTerm}
         />

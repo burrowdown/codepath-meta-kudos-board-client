@@ -6,8 +6,6 @@ function AllBoards({ createIsOpen, close, filter, searchTerm }) {
   const [boards, setBoards] = useState([])
   const [displayBoards, setDisplayBoards] = useState([])
 
-  // TODO: reset filter and search term when adding a new board
-
   useEffect(() => {
     const fetchBoards = async () => {
       try {
@@ -22,39 +20,28 @@ function AllBoards({ createIsOpen, close, filter, searchTerm }) {
         console.error("Error fetching boards:", error)
       }
     }
-
     fetchBoards()
   }, [])
 
   useEffect(() => {
-    if (filter === "all") {
-      setDisplayBoards(boards)
-    } else if (filter === "recent") {
-      setDisplayBoards(
-        boards
-          .toSorted((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
-          .slice(0, 6)
-      )
-    } else {
-      setDisplayBoards(boards.filter((board) => board.category === filter))
-    }
-  }, [filter])
+    let newBoards = boards
 
-  useEffect(() => {
     if (searchTerm) {
-      setDisplayBoards(
-        boards.filter((board) =>
-          board.title.toLowerCase().includes(searchTerm.toLowerCase())
-        )
+      newBoards = boards.filter((board) =>
+        board.title.toLowerCase().includes(searchTerm.toLowerCase())
       )
+    } else if (filter === "all") {
+      // do nothing
+    } else if (filter === "recent") {
+      newBoards = boards
+        .toSorted((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+        .slice(0, 6)
     } else {
-      setDisplayBoards(boards)
+      newBoards = boards.filter((board) => board.category === filter)
     }
-  }, [searchTerm])
 
-  useEffect(() => {
-    setDisplayBoards(boards)
-  }, [boards])
+    setDisplayBoards(newBoards)
+  }, [filter, searchTerm, boards])
 
   const deleteBoard = async (boardId) => {
     try {
