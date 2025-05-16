@@ -31,9 +31,9 @@ function AllBoards({ createIsOpen, close, filter, searchTerm }) {
       setDisplayBoards(boards)
     } else if (filter === "recent") {
       setDisplayBoards(
-        boards.toSorted((a, b) => {
-          return new Date(b.createdAt) - new Date(a.createdAt)
-        })
+        boards
+          .toSorted((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+          .slice(0, 6)
       )
     } else {
       setDisplayBoards(boards.filter((board) => board.category === filter))

@@ -1,7 +1,5 @@
 import { useState } from "react"
 
-// TODO: add card to the board
-
 const GIPHY_BASE_URL = "https://api.giphy.com/v1/gifs/search"
 const GIPHY_API_KEY = import.meta.env.VITE_GIPHY_API_KEY
 
@@ -15,7 +13,7 @@ function CreateCard({ boardId, close, setCards }) {
   const fetchGifs = async () => {
     try {
       const response = await fetch(
-        `${GIPHY_BASE_URL}/?api_key=${GIPHY_API_KEY}&limit=6&q=${searchTerm}&rating=pg`
+        `${GIPHY_BASE_URL}/?api_key=${GIPHY_API_KEY}&limit=7&q=${searchTerm}&rating=pg`
       )
       if (!response.ok) throw new Error("Network response was not ok")
       const data = await response.json()
@@ -72,14 +70,15 @@ function CreateCard({ boardId, close, setCards }) {
             value={author}
             onChange={(e) => setAuthor(e.target.value)}
           />
-          <input
-            type="text"
-            placeholder="Search GIFs"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
-          {/* TODO: style this button */}
-          <button onClick={fetchGifs}>Search</button>
+          <div className="gif-search-input">
+            <input
+              type="text"
+              placeholder="Search GIFs"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+            <button onClick={fetchGifs}>Search</button>
+          </div>
         </div>
         <div className="gif-results">
           {gifs.map((gif) => (

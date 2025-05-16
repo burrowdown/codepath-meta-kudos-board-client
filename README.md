@@ -27,7 +27,7 @@ Deployed Application (**required**): [Kudos Board Deployed Site](ADD_LINK_HERE)
 - [x] **Filter Boards**
   - [x] Home page includes navigation bar, drop down, or some other mechanism which allows users to filter boards by the following categories:
     - [x] All/Home (displays all boards)
-    - [ ] Recent (displays the 6 most recently created boards)
+    - [x] Recent (displays the 6 most recently created boards)
     - [x] Celebration
     - [x] Thank you
     - [x] Inspiration

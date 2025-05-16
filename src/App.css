@@ -75,7 +75,7 @@ footer {
   grid-template-columns: repeat(auto-fit, minmax(auto, 15rem));
   gap: 1rem;
   margin: 2rem;
-  /* overflow-y: auto; */
+  justify-content: center;
 }
 
 #all-boards a {
@@ -111,7 +111,7 @@ footer {
 .card {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   border-radius: 8px;
   background-color: var(--color-light);
@@ -128,13 +128,21 @@ footer {
   border-radius: 4px;
 }
 
+.card .card-text {
+  text-align: center;
+  margin: 0.3rem;
+}
+
+.card .card-text h3 {
+  margin: 0.5rem 1.5rem;
+}
+
 /* Modal */
 
 .modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
-  /* z-index: 2; */
   width: 100%;
   height: 100%;
   overflow: auto;
@@ -159,7 +167,7 @@ footer {
 .input-wrapper {
   display: flex;
   flex-direction: column;
-  width: 15rem;
+  width: 13rem;
 }
 
 /* Board Page */
@@ -183,30 +191,41 @@ footer {
 
 /* Cards */
 
+.gif-search-input {
+  display: flex;
+  margin: 0;
+  width: 15rem;
+}
+.gif-search-input input[type="text"] {
+  border-radius: 8px 0 0 8px;
+}
+.gif-search-input button {
+  border-radius: 0 8px 8px 0;
+}
+
 .gif-results {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 1rem;
+  margin: 1.5rem;
 }
 
 .gif-results img {
-  /* width: 10rem; */
-  /* height: 10rem; */
-  border-radius: 4px;
+  height: 10rem;
 }
 
 .selected-gif {
-  border: 10px solid var(--color-coral-dark);
+  box-shadow: 0 0 0 1rem var(--color-coral-dark);
 }
 
-.gif-results img:hover {
-  transform: scale(1.02);
+.gif-results img:hover,
+.selected-gif {
+  transform: scale(1.05);
   transition: transform 0.3s;
-  box-shadow: 0 2px 4px var(--color-blue-light);
 }
 
 @media screen and (max-width: 600px) {
-  /* TODO: cards lose margin? */
   #logo-img {
     height: 5rem;
   }

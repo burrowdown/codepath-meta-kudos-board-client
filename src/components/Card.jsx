@@ -23,8 +23,10 @@ function Card({ card, handleDelete }) {
 
   return (
     <div key={card.id} className="card">
-      <h2>{card.text}</h2>
-      <p>From: {card.author}</p>
+      <div className="card-text">
+        <h3>{card.text}</h3>
+        {card.author && <p>From: {card.author}</p>}
+      </div>
       <img src={card.gifUrl} alt="" />
       <div className="button-wrapper">
         <button onClick={vote} className="coral">
