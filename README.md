@@ -4,7 +4,7 @@
 
 Submitted by: Danny Burrow
 
-Deployed Application (**required**): [Kudos Board Deployed Site](ADD_LINK_HERE)
+Deployed Application (**required**): [Kudos Board Deployed Site](https://codepath-meta-kudos-board-client.onrender.com/)
 
 ### Application Features
 
@@ -99,22 +99,22 @@ Deployed Application (**required**): [Kudos Board Deployed Site](ADD_LINK_HERE)
       - [ ] Message body
       - [ ] Author (if specified)
   - [ ] Users can add multiple comments to a single card.
-- [ ] **Dark Mode**
-  - [ ] Users can toggle between light mode and dark mode using a button displayed on the:
-    - [ ] Home Page
-    - [ ] Board Pages
-  - [ ] When the button is clicked, the color theme switches to the opposite of the current mode.
-  - [ ] When dark mode is enabled:
-    - [ ] Text and icons use a light color
-    - [ ] The background uses a dark color
-    - [ ] Color contrast has at least a 4.5:1 ratio using this [color contrast checker](https://webaim.org/resources/contrastchecker/)
-  - [ ] When light mode is enabled:
-    - [ ] Text and icons use a dark color
-    - [ ] The background uses a light color
-    - [ ] Color contrast has at least a 4.5:1 ratio using this [color contrast checker](https://webaim.org/resources/contrastchecker/)
-  - [ ] The chosen mode (light or dark) persists when navigating from home page to board pages and vice versa.
-  - [ ] When the user first visits the site the theme defaults to light mode.
-  - [ ] **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS**: To ease the grading process, please use the [color contrast checker](https://webaim.org/resources/contrastchecker/) to demonstrate to the grading team that text and background colors on your website have appropriate contrast in both light and dark mode. The Contrast Ratio should be above 4.5:1 and should have a green box surrounding it.
+- [x] **Dark Mode**
+  - [x] Users can toggle between light mode and dark mode using a button displayed on the:
+    - [x] Home Page
+    - [x] Board Pages
+  - [x] When the button is clicked, the color theme switches to the opposite of the current mode.
+  - [x] When dark mode is enabled:
+    - [x] Text and icons use a light color
+    - [x] The background uses a dark color
+    - [x] Color contrast has at least a 4.5:1 ratio using this [color contrast checker](https://webaim.org/resources/contrastchecker/)
+  - [x] When light mode is enabled:
+    - [x] Text and icons use a dark color
+    - [x] The background uses a light color
+    - [x] Color contrast has at least a 4.5:1 ratio using this [color contrast checker](https://webaim.org/resources/contrastchecker/)
+  - [x] The chosen mode (light or dark) persists when navigating from home page to board pages and vice versa.
+  - [x] When the user first visits the site the theme defaults to light mode.
+  - [x] **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS**: To ease the grading process, please use the [color contrast checker](https://webaim.org/resources/contrastchecker/) to demonstrate to the grading team that text and background colors on your website have appropriate contrast in both light and dark mode. The Contrast Ratio should be above 4.5:1 and should have a green box surrounding it.
 - [x] **Pinned Cards**
   - [x] Users can pin a card to the top of the board.
   - [x] A Pin button is displayed on each card.
@@ -135,19 +135,17 @@ Deployed Application (**required**): [Kudos Board Deployed Site](ADD_LINK_HERE)
 
 ### Walkthrough Video
 
-`TODO://` Add the embedded URL code to your animated app walkthrough below, `ADD_EMBEDDED_CODE_HERE`. Make sure the video or gif actually renders and animates when viewing this README. Ensure your walkthrough showcases the presence and/or functionality of all features you implemented above (check them off as you film!). Pay attention to any **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS** checkboxes listed above to ensure graders see the full functionality of your website! (🚫 Remove this paragraph after adding walkthrough video)
-
-`ADD_EMBEDDED_CODE_HERE`
+[Link to Loom video](https://www.loom.com/share/717d5aa034124db6963b44e32b9ae2a7?sid=0d83520b-3417-4a50-85bf-227d51284cbe)
 
 ### Reflection
 
 - Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
 
-Add your response here
+No comment
 
 - If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
 
-Add your response here
+You know what, I actually think nothing. This wasn't super smooth but I didn't waste any time down unrpoductive rabbit holes (for once lololol) and I'm happy with where I landed. I could tackle that last stretch goal with more time, but it's kindof a doozy! The API side doesn't look so bad, but I'm so tired of writing CSS.
 
 - Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
@@ -155,8 +153,11 @@ Add your response here
 
 ### Open-source libraries used
 
-- Add any links to open-source libraries used in your project.
+[React Router](https://reactrouter.com/)
+[Express](https://expressjs.com/)
+[Prisma](https://www.prisma.io/)
+[cors](https://www.npmjs.com/package/cors)
 
 ### Shout out
 
-Give a shout out to somebody from your cohort that especially helped you during your project. This can be a fellow peer, instructor, TA, mentor, etc.
+I didn't wind up using Gabe's starter repo, but referencing it got me off my butt and making stuff! Thanks Gabe!

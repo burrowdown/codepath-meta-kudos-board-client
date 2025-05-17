@@ -76,6 +76,11 @@ function CreateCard({ boardId, close, setCards }) {
               placeholder="Search GIFs"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  fetchGifs()
+                }
+              }}
             />
             <button onClick={fetchGifs}>Search</button>
           </div>
