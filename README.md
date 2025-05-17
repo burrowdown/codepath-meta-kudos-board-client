@@ -83,7 +83,7 @@ Deployed Application (**required**): [Kudos Board Deployed Site](https://codepat
   - [x] When the user clicks the delete button for a card, the card disappears from the grid of cards.
 - [x] **Deployment**
   - [x] Website is deployed via Render.
-  - [ ] **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS**: For ease of grading, please use the deployed version of your website when creating your walkthrough.
+  - [x] **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS**: For ease of grading, please use the deployed version of your website when creating your walkthrough.
 
 #### Stretch Features
 
@@ -135,7 +135,7 @@ Deployed Application (**required**): [Kudos Board Deployed Site](https://codepat
 
 ### Walkthrough Video
 
-[Link to Loom video](https://www.loom.com/share/717d5aa034124db6963b44e32b9ae2a7?sid=0d83520b-3417-4a50-85bf-227d51284cbe)
+[Link to Loom video](https://www.loom.com/share/717d5aa034124db6963b44e32b9ae2a7?sid=1d05f4b3-ba36-4a3f-afad-ea8934716d64)
 
 ### Reflection
 
@@ -153,10 +153,10 @@ Add your response here
 
 ### Open-source libraries used
 
-[React Router](https://reactrouter.com/)
-[Express](https://expressjs.com/)
-[Prisma](https://www.prisma.io/)
-[cors](https://www.npmjs.com/package/cors)
+- [React Router](https://reactrouter.com/)
+- [Express](https://expressjs.com/)
+- [Prisma](https://www.prisma.io/)
+- [cors](https://www.npmjs.com/package/cors)
 
 ### Shout out
 
