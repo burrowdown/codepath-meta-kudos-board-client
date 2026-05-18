@@ -2,9 +2,9 @@
 
 ## Unit Assignment: Kudos Board
 
-Submitted by: Danny Burrow
+Submitted by: **Danny Burrow**
 
-Deployed Application (**required**): [Kudos Board Deployed Site](https://codepath-meta-kudos-board-client.onrender.com/)
+Deployed Application (optional): [Kudos Board Deployed Site](https://codepath-meta-kudos-board-client.onrender.com/) (this is still up from last year but is no longer DB supported)
 
 ### Application Features
 
@@ -51,7 +51,7 @@ Deployed Application (**required**): [Kudos Board Deployed Site](https://codepat
     - [x] Title (required)
     - [x] Category (required)
     - [x] Author (optional)
-  - [x] Items listed as required above must have a value to succesffuly create a new board.
+  - [x] Items listed as required above must have a value to successfully create a new board.
   - [x] When the board is successfully created, it appears in the grid of boards.
 - [x] **Delete Board**
   - [x] User can delete boards on the home page.
@@ -70,7 +70,7 @@ Deployed Application (**required**): [Kudos Board Deployed Site](https://codepat
   - [x] Users can make a new card associated with the current board.
   - [x] To successfully create a new card, users must specify the following:
     - [x] Text message (required).
-    - [x] A gif found using the [GIPHY API](https://developers.giphy.com/docs/api/) (required).
+    - [x] A gif users can search for and select within the form using the [GIPHY API](https://developers.giphy.com/docs/api/) (required).
   - [x] Users are given the option to specify the author of the card.
   - [x] When the new card is successfully created, it appears in the grid of cards.
 - [x] **Upvote Card**
@@ -81,12 +81,11 @@ Deployed Application (**required**): [Kudos Board Deployed Site](https://codepat
 - [x] **Delete Card**
   - [x] Users can delete cards.
   - [x] When the user clicks the delete button for a card, the card disappears from the grid of cards.
-- [x] **Deployment**
-  - [x] Website is deployed via Render.
-  - [x] **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS**: For ease of grading, please use the deployed version of your website when creating your walkthrough.
 
 #### Stretch Features
 
+- [x] **Deployment**
+  - [x] Website is deployed via Render.
 - [ ] **Comments**
   - [ ] Users can add comments to cards.
   - [ ] To successfully add a comment, users must specify a text message body.
@@ -129,9 +128,16 @@ Deployed Application (**required**): [Kudos Board Deployed Site](https://codepat
   - [x] Pinned cards always appear at the top of the board, above unpinned cards.
   - [x] If multiple cards are pinned, they maintain their pinned order based on the time they were pinned.
     - [x] More recent pins should appear first.
-  - [x] The pinned state of a card persists when:
-    - [x] navigating away from and back to the board.
-    - [x] refreshing the page.
+- [x] The pinned state of a card persists when:
+  - [x] navigating away from and back to the board.
+  - [x] refreshing the page.
+- [ ] **User Accounts**
+  - [ ] Users should be able to log in with a username and password.
+  - [ ] Users should be able to sign up for a new account.
+  - [ ] Boards and cards should be associated with a user.
+    - [ ] Anonymous cards or cards by guest users should still be allowed.
+  - [ ] Add a new filter option on the home page to display only the current user's boards.
+  - [ ] Allow boards to be deleted only if they are owned by the user.
 
 ### Walkthrough Video
 
@@ -145,11 +151,11 @@ No comment
 
 - If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
 
-You know what, I actually think nothing. This wasn't super smooth but I didn't waste any time down unrpoductive rabbit holes (for once lololol) and I'm happy with where I landed. I could tackle that last stretch goal with more time, but it's kindof a doozy! The API side doesn't look so bad, but I'm so tired of writing CSS.
+You know what, I actually think nothing. This wasn't super smooth but I didn't waste any time down unrpoductive rabbit holes (for once lol) and I'm happy with where I landed. I could tackle that last stretch goal with more time, but it's kindof a doozy! The API side doesn't look so bad, but I'm so tired of writing CSS.
 
 - Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
-Add your response here
+I need to make myself a checklist/script to go along with, I always forget stuff and duplicate stuff.
 
 ### Open-source libraries used
 
@@ -160,4 +166,4 @@ Add your response here
 
 ### Shout out
 
-I didn't wind up using Gabe's starter repo, but referencing it got me off my butt and making stuff! Thanks Gabe!
+Thanks to whoever decided not to add a new feature to this one lololol
